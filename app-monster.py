@@ -1,4 +1,5 @@
 import random
+import os
 
 attacker = [
     {
@@ -60,6 +61,8 @@ while hp_spelare > 0 and hp_monster > 0:
     if val_attack.capitalize() not in print_list:
         print("Välj någon av attackerna!\n")
         continue
+    
+    os.system("cls")
 
     index = print_list.index(val_attack.capitalize())
 
@@ -76,7 +79,7 @@ while hp_spelare > 0 and hp_monster > 0:
     if hp_monster > 0:
        monster_attack = random.choice(monster_attacker)
        hp_spelare -= monster_attack["skada"]
-       print(f"Monstret använder {monster_attack["name"]}! Du tar {monster_attack["skada"]} skada.")
+       print(f"Monstret använder {monster_attack["name"]}! Du tar {monster_attack["skada"]} skada.\n")
     
     print(f"Din HP: {hp_spelare} | Monster HP: {hp_monster}\n")
 
